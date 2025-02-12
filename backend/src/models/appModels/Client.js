@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const schema = new mongoose.Schema({
+const clientSchema = new mongoose.Schema({
   removed: {
     type: Boolean,
     default: false,
@@ -20,16 +20,12 @@ const schema = new mongoose.Schema({
   email: String,
   createdBy: { type: mongoose.Schema.ObjectId, ref: 'Admin' },
   assigned: { type: mongoose.Schema.ObjectId, ref: 'Admin' },
-  created: {
-    type: Date,
-    default: Date.now,
-  },
-  updated: {
-    type: Date,
-    default: Date.now,
-  },
-});
+},
+{
+  timestamps: true
+}
+);
 
-schema.plugin(require('mongoose-autopopulate'));
+clientSchema.plugin(require('mongoose-autopopulate'));
 
-module.exports = mongoose.model('Client', schema);
+module.exports = mongoose.model('Client', clientSchema);
