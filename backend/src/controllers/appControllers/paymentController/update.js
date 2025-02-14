@@ -44,7 +44,6 @@ const update = async (req, res) => {
       ? 'partially'
       : 'unpaid';
 
-  const updatedDate = new Date();
   const updates = {
     number: req.body.number,
     date: req.body.date,
@@ -52,7 +51,6 @@ const update = async (req, res) => {
     paymentMode: req.body.paymentMode,
     ref: req.body.ref,
     description: req.body.description,
-    updated: updatedDate,
   };
 
   const result = await Model.findOneAndUpdate(

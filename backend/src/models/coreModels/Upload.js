@@ -64,10 +64,6 @@ const uploadSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  created: {
-    type: Date,
-    default: Date.now,
-  },
-});
+}, {timestamps: true});
 
 module.exports = mongoose.model('Upload ', uploadSchema);

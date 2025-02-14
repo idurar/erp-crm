@@ -127,15 +127,7 @@ const quoteSchema = new mongoose.Schema({
       },
     },
   ],
-  updated: {
-    type: Date,
-    default: Date.now,
-  },
-  created: {
-    type: Date,
-    default: Date.now,
-  },
-});
+}, {timestamps: true});
 
 quoteSchema.plugin(require('mongoose-autopopulate'));
 module.exports = mongoose.model('Quote', quoteSchema);

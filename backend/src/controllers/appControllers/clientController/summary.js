@@ -39,7 +39,7 @@ const summary = async (Model, req, res) => {
           {
             $match: {
               removed: false,
-              created: { $gte: startDate.toDate(), $lte: endDate.toDate() },
+              createdAt: { $gte: startDate.toDate(), $lte: endDate.toDate() },
               enabled: true,
             },
           },

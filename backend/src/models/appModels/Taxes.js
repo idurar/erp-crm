@@ -22,10 +22,6 @@ const schema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
-  created: {
-    type: Date,
-    default: Date.now,
-  },
-});
+}, {timestamps: true});
 
 module.exports = mongoose.model('Taxes', schema);

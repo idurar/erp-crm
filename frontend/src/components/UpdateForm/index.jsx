@@ -63,16 +63,16 @@ export default function UpdateForm({ config, formElements, withUpload = false })
           expiredDate: dayjs(newValues['expiredDate']).format('YYYY-MM-DDTHH:mm:ss.SSSZ'),
         };
       }
-      if (newValues.created) {
+      if (newValues.createdAt) {
         newValues = {
           ...newValues,
-          created: dayjs(newValues['created']).format('YYYY-MM-DDTHH:mm:ss.SSSZ'),
+          createdAt: dayjs(newValues['createdAt']).format('YYYY-MM-DDTHH:mm:ss.SSSZ'),
         };
       }
-      if (newValues.updated) {
+      if (newValues.updatedAt) {
         newValues = {
           ...newValues,
-          updated: dayjs(newValues['updated']).format('YYYY-MM-DDTHH:mm:ss.SSSZ'),
+          updatedAt: dayjs(newValues['updatedAt']).format('YYYY-MM-DDTHH:mm:ss.SSSZ'),
         };
       }
       form.resetFields();

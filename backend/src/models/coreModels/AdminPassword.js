@@ -31,7 +31,7 @@ const AdminPasswordSchema = new Schema({
     type: [String],
     default: [],
   },
-});
+},{timestamps: true});
 
 // AdminPasswordSchema.index({ user: 1 });
 // generating a hash

@@ -8,7 +8,7 @@ const listAll = async (req, res) => {
   const result = await Model.find({
     removed: false,
     isPrivate: false,
-  }).sort({ created: sort });
+  }).sort({ createdAt: sort });
 
   if (result.length > 0) {
     return res.status(200).json({

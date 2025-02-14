@@ -23,15 +23,11 @@ const adminSchema = new Schema({
     type: String,
     trim: true,
   },
-  created: {
-    type: Date,
-    default: Date.now,
-  },
   role: {
     type: String,
     default: 'owner',
     enum: ['owner'],
   },
-});
+}, {timestamps: true});
 
 module.exports = mongoose.model('Admin', adminSchema);

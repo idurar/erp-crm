@@ -49,14 +49,6 @@ const paymentSchema = new mongoose.Schema({
   description: {
     type: String,
   },
-  updated: {
-    type: Date,
-    default: Date.now,
-  },
-  created: {
-    type: Date,
-    default: Date.now,
-  },
-});
+}, { timestamps: true });
 paymentSchema.plugin(require('mongoose-autopopulate'));
 module.exports = mongoose.model('Payment', paymentSchema);

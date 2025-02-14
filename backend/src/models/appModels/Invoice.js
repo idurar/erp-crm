@@ -164,16 +164,8 @@ const invoiceSchema = new mongoose.Schema({
         default: true,
       },
     },
-  ],
-  updated: {
-    type: Date,
-    default: Date.now,
-  },
-  created: {
-    type: Date,
-    default: Date.now,
-  },
-});
+  ]
+}, { timestamps: true });
 
 invoiceSchema.plugin(require('mongoose-autopopulate'));
 module.exports = mongoose.model('Invoice', invoiceSchema);

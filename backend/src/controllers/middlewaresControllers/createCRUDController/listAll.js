@@ -9,7 +9,7 @@ const listAll = async (Model, req, res) => {
     result = await Model.find({
       removed: false,
     })
-      .sort({ created: sort })
+      .sort({ createdAt: sort })
       .populate()
       .exec();
   } else {
@@ -17,7 +17,7 @@ const listAll = async (Model, req, res) => {
       removed: false,
       enabled: enabled,
     })
-      .sort({ created: sort })
+      .sort({ createdAt: sort })
       .populate()
       .exec();
   }

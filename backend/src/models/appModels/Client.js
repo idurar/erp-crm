@@ -20,15 +20,7 @@ const schema = new mongoose.Schema({
   email: String,
   createdBy: { type: mongoose.Schema.ObjectId, ref: 'Admin' },
   assigned: { type: mongoose.Schema.ObjectId, ref: 'Admin' },
-  created: {
-    type: Date,
-    default: Date.now,
-  },
-  updated: {
-    type: Date,
-    default: Date.now,
-  },
-});
+}, {timestamps: true});
 
 schema.plugin(require('mongoose-autopopulate'));
 
