@@ -60,7 +60,7 @@ async function setupApp() {
     await PaymentMode.insertMany([
       {
         name: 'Default Payment',
-        description: 'Default Payment Mode (Cash , Wire Transfert)',
+        description: 'Default Payment Mode (Cash , Wire Transfer)',
         isDefault: true,
       },
     ]);
