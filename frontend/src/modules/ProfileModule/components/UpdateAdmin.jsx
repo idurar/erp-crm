@@ -29,7 +29,15 @@ const UpdateAdmin = ({ config }) => {
   }, [currentAdmin]);
 
   const handleSubmit = () => {
-    form.submit();
+    form
+      .validateFields()
+      .then((values) => {
+        onSubmit(values);
+        updatePanel.close();
+      })
+      .catch((errorInfo) => {
+        console.log('Form validation failed:', errorInfo);
+      });
   };
 
   const onSubmit = (fieldsValue) => {
@@ -58,7 +66,6 @@ const UpdateAdmin = ({ config }) => {
             key={`${uniqueId()}`}
             onClick={() => {
               handleSubmit();
-              updatePanel.close();
             }}
             type="primary"
             icon={<SaveOutlined />}

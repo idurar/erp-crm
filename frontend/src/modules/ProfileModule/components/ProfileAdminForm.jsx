@@ -27,6 +27,10 @@ export default function AdminForm({ isUpdateForm = false }) {
           {
             required: true,
           },
+          {
+            pattern: /^[A-Za-z][A-Za-z'-]+$/,
+            message: 'Please enter a valid First Name',
+          }
         ]}
       >
         <Input autoComplete="off" />
@@ -38,6 +42,10 @@ export default function AdminForm({ isUpdateForm = false }) {
           {
             required: true,
           },
+          {
+            pattern: /^[A-Za-z][A-Za-z'-]+$/,
+            message: 'Please enter a valid Last Name',
+          }
         ]}
       >
         <Input autoComplete="off" />
